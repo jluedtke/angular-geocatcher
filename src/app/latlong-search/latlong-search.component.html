@@ -1,11 +1,12 @@
-<hr>
-<h3>Search by Coordinates</h3>
-<label>Latitude: </label>
-<input type="text" #lat value="37.4224764">
-<label>Longitude: </label>
-<input type="text" #long value="-122.0842499">
-<button type="button" (click)="latLongInput(lat.value, long.value)">Search</button>
+<form class="">
+  <h3>Search by Coordinates</h3>
+  <label class="text-dark">Latitude: </label>
+  <input class="input-dark" type="text" #lat placeholder="e.g : 37.4224764">
+  <label class="text-dark">Longitude: </label>
+  <input class="input-dark" type="text" #long placeholder="e.g : -122.0842499">
+  <button type="button" class="btn-pop" (click)="latLongInput(lat.value, long.value)">Search</button>
 
-<div *ngIf="addressInfo">
-  <h3>Address: {{(addressInfo)?.results[0].formatted_address}}</h3>
-</div>
+  <div *ngIf="addressInfo">
+    <h3 class="text-dark">Address: {{(addressInfo)?.results[0].formatted_address}}</h3>
+  </div>
+</form>

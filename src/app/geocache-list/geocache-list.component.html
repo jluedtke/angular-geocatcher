@@ -1,11 +1,13 @@
-<app-create-geocache></app-create-geocache>
-<hr>
-<h1>All Geocaches</h1>
+
+<header class="form-header-dark">All Geocaches</header>
 <div *ngFor="let geocache of geocaches">
-  <h3>{{geocache.creator}}</h3>
+  <h3 class="text-pop">{{geocache.creator}}</h3>
   <ul>
     <li>Latitude: {{geocache.lat}}</li>
     <li>Longitude: {{geocache.lng}}</li>
     <li>Address: {{geocache.address}}</li>
   </ul>
 </div>
+
+<br><br>
+<app-create-geocache></app-create-geocache>

@@ -3,3 +3,8 @@
 <label>Address: </label>
 <input type="text" #address value="277 Bedford Avenue, Brooklyn, NY 11211, USA">
 <button type="button" (click)="addressInput(address.value)">Search</button>
+
+<div *ngIf="coordinateInfo">
+  <h3>Latitude: {{(coordinateInfo)?.results[0].geometry.location.lat}}</h3>
+  <h3>Longitude: {{(coordinateInfo)?.results[0].geometry.location.lng}}</h3>
+</div>

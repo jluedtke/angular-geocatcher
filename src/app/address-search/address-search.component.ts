@@ -16,8 +16,7 @@ export class AddressSearchComponent implements OnInit {
   }
 
   addressInput(address: string) {
-    let formattedAddress: string = address.replace(/( )/, '+');
-    console.log(formattedAddress);
+    var formattedAddress: string = address.replace(/( )/, '+');
     this.geoService.getCoordinatesFromAddress(formattedAddress).subscribe(data => {
       if (data.json().results.length > 0) {
         this.coordinateInfo = data.json();

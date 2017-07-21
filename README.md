@@ -2,7 +2,7 @@
 ### Jared Luedtke 07.21.17
 
 ## Description
-
+Geocaching is an outdoor activity in which participants either hide or locate objects in obscure places (there are geocaches in outerspace!). The location of these objects are stored on various listing sites as GPS coordinates. This is an app to post or look up the location of geocaches.
 
 ## Specs
 | Spec | Input | Output | Description |

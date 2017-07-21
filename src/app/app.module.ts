@@ -9,6 +9,8 @@ import { routing } from './app.routing'
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LatlongSearchComponent } from './latlong-search/latlong-search.component';
+import { AddressSearchComponent } from './address-search/address-search.component';
 
 
 export const firebaseConfig = {
@@ -21,7 +23,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LatlongSearchComponent,
+    AddressSearchComponent
   ],
   imports: [
     BrowserModule,

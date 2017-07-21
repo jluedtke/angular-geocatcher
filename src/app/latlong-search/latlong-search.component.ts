@@ -19,6 +19,7 @@ export class LatlongSearchComponent implements OnInit {
     this.geoService.getAddressFromCoordinates(lat, long).subscribe(data => {
       if (data.json().results.length > 0) {
         this.addressInfo = data.json();
+        console.log(this.addressInfo)
       } else {
         console.log('No Data');
       }

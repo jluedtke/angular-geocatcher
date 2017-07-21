@@ -1,7 +1,11 @@
 <hr>
 <h3>Search by Coordinates</h3>
 <label>Latitude: </label>
-<input type="text" #lat>
+<input type="text" #lat value="37.4224764">
 <label>Longitude: </label>
-<input type="text" #long>
+<input type="text" #long value="-122.0842499">
 <button type="button" (click)="latLongInput(lat.value, long.value)">Search</button>
+
+<div *ngIf="addressInfo">
+  <h3>Address: {{(addressInfo)?.results[0].formatted_address}}</h3>
+</div>

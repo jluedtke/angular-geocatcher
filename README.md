@@ -9,6 +9,9 @@ Geocaching is an outdoor activity in which participants either hide or locate ob
 | :------------- | :------------- | :------------- | :------------- |
 | Program can display an address from a set of coordinates. | "40.7, -73.9" | Some Address in California | Initial API call. |
 | Program can display coordinates from an address. | "Some Address in California" | 40.7, -73.9 | Also an initial API call. |
+| Program has full CRUD (Create, Read, Update, Delete) functionality for instances of geocaches. | Geocache1(author, lat, long, address, isFound) | Geocache1(Adam S., 40, -40, 1776 Freedom Ave, true) | Users of the website can create geocaches. |
+| Program can display geocaches in a list. | "View all" | Geocache1, Geocache2, Geocache3 | Users of the website can view all geocaches. |
+| Users can update a geocache if they found it. | Geocache2 | Geocache2.isFound = true | When a user finds a geocache, it updates for everyone to see. |
 
 
 

@@ -1,0 +1,11 @@
+<hr>
+<h1>Create Geocache</h1>
+<label>Author: </label> <!-- eventually make userName -->
+<input type="text" #author value="Larry Page">
+<label>Latitude: </label>
+<input type="text" #lat value="37.4224764">
+<label>Longitude: </label>
+<input type="text" #lng value="-122.0842499">
+<label>Address: </label>
+<input type="text" #address value="Google Bldg 40, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA">
+<button type="button" (click)="createGeocache(author.value, lat.value, lng.value, address.value); author.value = ''; lat.value = ''; lng.value = ''; address.value = '';">Create</button>

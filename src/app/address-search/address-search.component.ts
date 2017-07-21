@@ -23,7 +23,7 @@ export class AddressSearchComponent implements OnInit {
     this.geoService.getCoordinatesFromAddress(formattedAddress).subscribe(data => {
       if (data.json().results.length > 0) {
         this.coordinateInfo = data.json();
-        this.values.push(address);
+        this.values.push(data.json().results[0].formatted_address);
         this.values.push((data.json().results[0].geometry.location.lat).toString());
         this.values.push((data.json().results[0].geometry.location.lng).toString());
         this.sendValues();

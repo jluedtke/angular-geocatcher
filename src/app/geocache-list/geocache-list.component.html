@@ -1,0 +1,11 @@
+<app-create-geocache></app-create-geocache>
+<hr>
+<h1>All Geocaches</h1>
+<div *ngFor="let geocache of geocaches">
+  <h3>{{geocache.creator}}</h3>
+  <ul>
+    <li>Latitude: {{geocache.lat}}</li>
+    <li>Longitude: {{geocache.lng}}</li>
+    <li>Address: {{geocache.address}}</li>
+  </ul>
+</div>

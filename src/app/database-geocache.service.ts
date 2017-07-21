@@ -14,4 +14,8 @@ export class DatabaseGeocacheService {
   addGeocacheToDatabase(geocache: Geocache) {
     this.geocaches.push(geocache);
   }
+
+  getGeocaches() {
+    return this.geocaches;
+  }
 }

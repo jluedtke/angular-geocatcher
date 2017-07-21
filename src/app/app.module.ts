@@ -12,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LatlongSearchComponent } from './latlong-search/latlong-search.component';
 import { AddressSearchComponent } from './address-search/address-search.component';
 import { CreateGeocacheComponent } from './create-geocache/create-geocache.component';
+import { GeocacheListComponent } from './geocache-list/geocache-list.component';
 
 
 export const firebaseConfig = {
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     WelcomeComponent,
     LatlongSearchComponent,
     AddressSearchComponent,
-    CreateGeocacheComponent
+    CreateGeocacheComponent,
+    GeocacheListComponent
   ],
   imports: [
     BrowserModule,

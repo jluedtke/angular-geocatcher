@@ -1,7 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { CreateGeocacheComponent } from './create-geocache/create-geocache.component';
+import { GeocacheListComponent } from './geocache-list/geocache-list.component';
 
 
 
@@ -12,8 +12,8 @@ const appRoutes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'create',
-    component: CreateGeocacheComponent
+    path: 'geocaches',
+    component: GeocacheListComponent
   },
 
 ];

@@ -1,4 +1,4 @@
-<form class="box-dark" action="index.html" method="post">
+<form *ngIf="!childGeocacheValues" class="box-dark" action="index.html" method="post">
   <p class=form-header-dark>Create Geocache</p>
   <label class="text-dark">Finder/Creator: </label> <!-- eventually make userName? -->
   <input class="input-dark" type="text" #author value="Larry Page">
@@ -8,5 +8,18 @@
   <input class="input-dark" type="text" #lng value="-122.0842499">
   <label class="text-dark">Address: </label>
   <input class="input-dark" type="text" #address value="Google Bldg 40, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA">
+  <button class="btn-pop" type="button" (click)="createGeocache(author.value, lat.value, lng.value, address.value); author.value = ''; lat.value = ''; lng.value = ''; address.value = '';">Create</button>
+</form>
+
+<form *ngIf="childGeocacheValues" class="box-dark" action="index.html" method="post">
+  <p class=form-header-dark>Create Geocache</p>
+  <label class="text-dark">Finder/Creator: </label> <!-- eventually make userName? -->
+  <input class="input-dark" type="text" #author placeHolder="Your_Info_Here">
+  <label class="text-dark">Latitude: </label>
+  <input class="input-dark" type="text" #lat value={{childGeocacheValues[1]}}>
+  <label class="text-dark">Longitude: </label>
+  <input class="input-dark" type="text" #lng value={{childGeocacheValues[2]}}>
+  <label class="text-dark">Address: </label>
+  <input class="input-dark" type="text" #address value={{childGeocacheValues[0]}}>
   <button class="btn-pop" type="button" (click)="createGeocache(author.value, lat.value, lng.value, address.value); author.value = ''; lat.value = ''; lng.value = ''; address.value = '';">Create</button>
 </form>

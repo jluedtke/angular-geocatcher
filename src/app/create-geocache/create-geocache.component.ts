@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Geocache } from '../geocache.model';
 import { DatabaseGeocacheService } from '../database-geocache.service';
 
@@ -9,6 +9,7 @@ import { DatabaseGeocacheService } from '../database-geocache.service';
   providers: [DatabaseGeocacheService]
 })
 export class CreateGeocacheComponent implements OnInit {
+  @Input() childGeocacheValues: string[];
 
   constructor(private dbgService: DatabaseGeocacheService) { }
 

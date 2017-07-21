@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GeocodeService } from '../geocode.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { GeocodeService } from '../geocode.service';
   providers: [GeocodeService]
 })
 export class AddressSearchComponent implements OnInit {
+  @Output() clickSender = new EventEmitter();
+  values: string[];
   coordinateInfo: any[];
 
   constructor(private geoService: GeocodeService) { }
@@ -16,15 +18,23 @@ export class AddressSearchComponent implements OnInit {
   }
 
   addressInput(address: string) {
+    this.values = [];
     var formattedAddress: string = address.replace(/( )/, '+');
     this.geoService.getCoordinatesFromAddress(formattedAddress).subscribe(data => {
       if (data.json().results.length > 0) {
         this.coordinateInfo = data.json();
-        console.log(this.coordinateInfo);
+        this.values.push(address);
+        this.values.push((data.json().results[0].geometry.location.lat).toString());
+        this.values.push((data.json().results[0].geometry.location.lng).toString());
+        this.sendValues();
       } else {
-        console.log('No Data');
+        alert('No data was present.');
       }
     });
+  }
+
+  sendValues() {
+    this.clickSender.emit(this.values);
   }
 
 }

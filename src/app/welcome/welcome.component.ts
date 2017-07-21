@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  masterGeocacheValues: string[];
   constructor() { }
 
   ngOnInit() {
   }
 
+  setMasterGeocacheValues(values: string[]) {
+    this.masterGeocacheValues = values;
+  }
 }

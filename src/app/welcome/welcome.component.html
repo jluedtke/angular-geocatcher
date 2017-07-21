@@ -1,10 +1,11 @@
+<br>
 <header class="form-header-dark">Geocaching Lookup</header>
 <div class="f-row responsive">
   <div class="f-col-1">
-    <app-latlong-search></app-latlong-search>
+    <app-latlong-search (clickSender)="setMasterGeocacheValues($event)"></app-latlong-search>
   </div>
   <div class="f-col-1">
-    <app-address-search></app-address-search>
+    <app-address-search (clickSender)="setMasterGeocacheValues($event)"></app-address-search>
   </div>
 </div>
-<app-create-geocache></app-create-geocache>
+<app-create-geocache [childGeocacheValues]="masterGeocacheValues"></app-create-geocache>
